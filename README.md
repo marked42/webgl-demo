@@ -16,3 +16,24 @@
 
 1. https://thebookofshaders.com/?lan=ch
 1. https://www.shadertoy.com/
+
+## GLSG
+
+1. Storage qualifier (attribute / uniform / varying / const)
+
+1. is a state machine, clear/drawArray/drawElements
+1. drawArray
+1. drawElements
+
+mode:
+
+1. POINTS 一个点一组
+1. 两个点一组
+   1. LINES 每两个组成一组，点不重复使用
+   1. LINE_LOOP 每个点与后边的点组成一组，共 n 个线段，形成闭环。
+   1. LINE_STRIP 每个点与后边的点组成一组，共 n - 1 个线段
+1. 三个点一组
+   1. TRIANGLE 不重复使用
+   1. TRIANGLE_STRIP 重复使用
+   1. TRIANGLE_FAN 第一个点重复使用
+1. [Introduction to Computer Graphics](https://www.youtube.com/playlist?list=PLplnkTzzqsZTfYh4UbhLGpI5kGd5oW_Hh)
