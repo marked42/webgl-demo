@@ -37,3 +37,26 @@ mode:
    1. TRIANGLE_STRIP 重复使用
    1. TRIANGLE_FAN 第一个点重复使用
 1. [Introduction to Computer Graphics](https://www.youtube.com/playlist?list=PLplnkTzzqsZTfYh4UbhLGpI5kGd5oW_Hh)
+
+1. 其次坐标，点的齐次坐标使用 w 分量使用 1.0， 向量的 w 分量使用 0.0 M = inverse transpose (M^-1)^T
+
+1. Object Space -> Model Transform (Model Matrix)
+1. Euclidian Space -> View Transform (View Matrix)
+1. Projection transform ( perspective / orthographic)
+1. Projective Space (x, y, z, w) w 是 perspective
+
+   1. perspective division
+   1. Normalized Device Coordinates( NDC)
+
+1. View Transform (gl.viewport 函数) 将 NDC 映射到 视口（viewport）
+
+### Camera
+
+1. Model View Matrix 的逆时 Camera Matrix
+   1. orbiting camera 物品展示
+   1. tracking camera 场景漫游
+1. Perspective Matrix
+   1. perspective field-of-view, aspect, near, far
+   1. https://stackoverflow.com/questions/28286057/trying-to-understand-the-math-behind-the-perspective-matrix-in-webgl/28301213#28301213
+   1. https://unspecified.wordpress.com/2012/06/21/calculating-the-gluperspective-matrix-and-other-opengl-matrix-maths/
+   1. orthogonal, left, right, top, bottom, near, far
