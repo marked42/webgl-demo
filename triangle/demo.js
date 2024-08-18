@@ -31,7 +31,7 @@ function main() {
   var positions = [0, 0, 0, 0.5, 0.7, 0]
   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW)
 
-  webglUtils.resizeCanvasToDisplay(gl.canvas)
+  // webglUtils.resizeCanvasToDisplay(gl.canvas)
   gl.viewport(0, 0, gl.canvas.width, gl.canvas.height)
 
   gl.clearColor(0, 0, 0, 0)
