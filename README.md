@@ -1,8 +1,11 @@
 # Notes
 
+1. http://www.webglacademy.com/
 1. [MDN WebGL Tutorial](https://developer.mozilla.org/zh-CN/docs/Web/API/WebGL_API/Tutorial)
 1. [WebGL Fundamentals](https://webglfundamentals.org/)
+1. https://web.dev/articles/webgl-fundamentals
 1. [An intro to modern OpenGL](https://duriansoftware.com/joe/an-intro-to-modern-opengl.-table-of-contents)
+1. https://www.youtube.com/embed/H4c8t6myAWU/?feature=player_detailpage
 
 1. https://learnwebgl.brown37.net/
 1. https://github.com/Mindsblend/3D-Web-Roadmap/blob/master/02-graphics-and-3d-concepts/Introduction%20to%203D%20Graphics/main.md#what-is-3d-graphics
