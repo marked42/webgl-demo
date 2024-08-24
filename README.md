@@ -6,6 +6,8 @@
 1. https://web.dev/articles/webgl-fundamentals
 1. [An intro to modern OpenGL](https://duriansoftware.com/joe/an-intro-to-modern-opengl.-table-of-contents)
 1. https://www.youtube.com/embed/H4c8t6myAWU/?feature=player_detailpage
+1. https://github.com/RayTracing/raytracing.github.io
+1. [ray-tracing in one weekend](https://raytracing.github.io/)
 
 1. https://learnwebgl.brown37.net/
 1. https://github.com/Mindsblend/3D-Web-Roadmap/blob/master/02-graphics-and-3d-concepts/Introduction%20to%203D%20Graphics/main.md#what-is-3d-graphics
@@ -40,6 +42,9 @@ mode:
    1. TRIANGLE_STRIP 重复使用
    1. TRIANGLE_FAN 第一个点重复使用
 1. [Introduction to Computer Graphics](https://www.youtube.com/playlist?list=PLplnkTzzqsZTfYh4UbhLGpI5kGd5oW_Hh)
+
+1. 二次 translation / rotation / scale
+1. https://www.youtube.com/watch?v=kjBOesZCoqc&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab
 
 1. 其次坐标，点的齐次坐标使用 w 分量使用 1.0， 向量的 w 分量使用 0.0 M = inverse transpose (M^-1)^T
 
