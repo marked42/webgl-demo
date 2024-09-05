@@ -29,6 +29,7 @@ function main() {
 
   const childSize = new Size(200, 300)
   const child = new SingleChildRenderBox(context, offset, childSize)
+  // TODO: child size exceeds parent
   child.setColor('blue')
   root.setChild(child)
 
