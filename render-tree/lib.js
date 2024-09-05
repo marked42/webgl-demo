@@ -31,6 +31,13 @@ export class Offset {
   }
 }
 
+export class BoxRect {
+  constructor(offset, size) {
+    this.offset = offset
+    this.size = size
+  }
+}
+
 export class RenderBox {
   /**
    * @param {CanvasRenderingContext2D} context
@@ -39,6 +46,8 @@ export class RenderBox {
     this.context = context
     this.offset = offset
     this.preferredSize = preferredSize
+
+    this.color = 'green'
   }
 
   layout(constraint) {
@@ -57,9 +66,54 @@ export class RenderBox {
     console.log('box size: ', this.size)
   }
 
+  setColor(color) {
+    this.color = color
+  }
+
   paint() {
-    const { offset, size } = this
-    this.context.fillStyle = 'green'
+    const { offset, size } = this.boxRect()
+    this.context.fillStyle = this.color
     this.context.fillRect(offset.dx, offset.dy, size.width, size.height)
+  }
+
+  boxRect() {
+    return new BoxRect(this.offset, this.size)
+  }
+}
+
+export class SingleChildRenderBox extends RenderBox {
+  constructor(context, offset, preferredSize) {
+    super(context, offset, preferredSize)
+  }
+
+  setChild(child) {
+    if (!child) {
+      throw new Error('no child')
+    }
+    this.child = child
+    child.parent = this
+  }
+
+  layout(constraint) {
+    super.layout(constraint)
+    if (this.child) {
+      this.child.layout(constraint)
+    }
+  }
+
+  boxRect() {
+    const parentOffset = this.parent?.offset ?? new Offset(0, 0)
+    const offset = new Offset(
+      parentOffset.dx + this.offset.dx,
+      parentOffset.dy + this.offset.dy
+    )
+    return new BoxRect(offset, this.size)
+  }
+
+  paint() {
+    super.paint()
+    if (this.child) {
+      this.child.paint()
+    }
   }
 }

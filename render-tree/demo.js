@@ -1,4 +1,10 @@
-import { Size, Offset, RenderBox, BoxConstraint } from './lib.js'
+import {
+  Size,
+  Offset,
+  RenderBox,
+  BoxConstraint,
+  SingleChildRenderBox,
+} from './lib.js'
 
 function main() {
   /**
@@ -19,17 +25,23 @@ function main() {
 
   const offset = new Offset(150, 100)
   const size = new Size(400, 600)
-  const root = new RenderBox(context, offset, size)
+  const root = new SingleChildRenderBox(context, offset, size)
+
+  const childSize = new Size(200, 300)
+  const child = new SingleChildRenderBox(context, offset, childSize)
+  child.setColor('blue')
+  root.setChild(child)
 
   // largeContainer contains whole box
-  //   const largeContainer = rootContainer
-  //   root.layout(largeContainer)
+  const largeContainer = rootContainer
+
+  root.layout(largeContainer)
 
   //   const mediumContainer = new BoxConstraint(0, 500, 0, 500)
   //   root.layout(mediumContainer)
 
-  const smallContainer = new BoxConstraint(0, 200, 0, 200)
-  root.layout(smallContainer)
+  //   const smallContainer = new BoxConstraint(0, 200, 0, 200)
+  //   root.layout(smallContainer)
 
   root.paint()
 }
