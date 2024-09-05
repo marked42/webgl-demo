@@ -68,3 +68,8 @@ mode:
    1. https://stackoverflow.com/questions/28286057/trying-to-understand-the-math-behind-the-perspective-matrix-in-webgl/28301213#28301213
    1. https://unspecified.wordpress.com/2012/06/21/calculating-the-gluperspective-matrix-and-other-opengl-matrix-maths/
    1. orthogonal, left, right, top, bottom, near, far
+
+### Interaction
+
+1. Action 世界中物体移动
+2. Picking 用户与 3D 物体交互
