@@ -13,9 +13,24 @@ export class Offset {
 }
 
 export class RenderBox {
-  constructor(offset, size, preferredSize) {
+  /**
+   * @param {CanvasRenderingContext2D} context
+   */
+  constructor(context, offset, preferredSize) {
+    this.context = context
     this.offset = offset
-    this.size = size
     this.preferredSize = preferredSize
+  }
+
+  layout() {
+    this.size = {
+      ...this.preferredSize,
+    }
+  }
+
+  paint() {
+    const { offset, size } = this
+    this.context.fillStyle = 'green'
+    this.context.fillRect(offset.dx, offset.dy, size.width, size.height)
   }
 }

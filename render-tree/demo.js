@@ -10,14 +10,18 @@ function main() {
   }
 
   canvas.width = window.innerWidth
-  canvas.height = window.innerHeight
+  canvas.height = 1000
   canvas.style.width = window.innerWidth
-  canvas.style.height = window.innerHeight
+  canvas.style.height = 1000
 
   const context = canvas.getContext('2d')
 
-  context.fillStyle = 'green'
-  context.fillRect(10, 10, 150, 100)
+  const offset = new Offset(150, 100)
+  const size = new Size(400, 600)
+  const root = new RenderBox(context, offset, size)
+
+  root.layout()
+  root.paint()
 }
 
 main()
