@@ -5,6 +5,25 @@ export class Size {
   }
 }
 
+export function clamp(val, min, max) {
+  if (val < min) {
+    return min
+  }
+  if (val > max) {
+    return max
+  }
+  return val
+}
+
+export class BoxConstraint {
+  constructor(minWidth, maxWidth, minHeight, maxHeight) {
+    this.minWidth = minWidth
+    this.maxWidth = maxWidth
+    this.minHeight = minHeight
+    this.maxHeight = maxHeight
+  }
+}
+
 export class Offset {
   constructor(dx, dy) {
     this.dx = dx
@@ -22,10 +41,20 @@ export class RenderBox {
     this.preferredSize = preferredSize
   }
 
-  layout() {
+  layout(constraint) {
     this.size = {
-      ...this.preferredSize,
+      width: clamp(
+        this.preferredSize.width,
+        constraint.minWidth,
+        constraint.maxWidth
+      ),
+      height: clamp(
+        this.preferredSize.height,
+        constraint.minHeight,
+        constraint.maxHeight
+      ),
     }
+    console.log('box size: ', this.size)
   }
 
   paint() {

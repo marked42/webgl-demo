@@ -1,4 +1,4 @@
-import { Size, Offset, RenderBox } from './lib.js'
+import { Size, Offset, RenderBox, BoxConstraint } from './lib.js'
 
 function main() {
   /**
@@ -9,10 +9,11 @@ function main() {
     alert('canvas not found')
   }
 
-  canvas.width = window.innerWidth
-  canvas.height = 1000
-  canvas.style.width = window.innerWidth
-  canvas.style.height = 1000
+  const rootContainer = new BoxConstraint(0, window.innerWidth, 0, 1000)
+  canvas.width = rootContainer.maxWidth
+  canvas.height = rootContainer.maxHeight
+  canvas.style.width = rootContainer.maxWidth
+  canvas.style.height = rootContainer.maxHeight
 
   const context = canvas.getContext('2d')
 
@@ -20,7 +21,16 @@ function main() {
   const size = new Size(400, 600)
   const root = new RenderBox(context, offset, size)
 
-  root.layout()
+  // largeContainer contains whole box
+  //   const largeContainer = rootContainer
+  //   root.layout(largeContainer)
+
+  //   const mediumContainer = new BoxConstraint(0, 500, 0, 500)
+  //   root.layout(mediumContainer)
+
+  const smallContainer = new BoxConstraint(0, 200, 0, 200)
+  root.layout(smallContainer)
+
   root.paint()
 }
 
